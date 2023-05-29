@@ -5,12 +5,16 @@ import { AuthContextProvider } from './Components/Context/AuthContext';
 import {Routes,Route} from 'react-router-dom';
 
 function App() {
-  const token = localStorage.getItem("Authorization")
+  // getting token fron local storage one logged in
+  const token = localStorage.getItem("Authorization") 
 
   return (
     <>
+    {/* for google authentication and to get user info */}
       <AuthContextProvider>
+        {/* creating routes from react router dom */}
         <Routes>
+          {/* conditional rendering to navigate to dashboard page if token is present or else stay in login page */}
           {token ? (
             <Route path="/dashboard" element={<Dashboard />} />
           ) : (

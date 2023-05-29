@@ -5,14 +5,16 @@ import { UserAuth } from "./Context/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
+  // getting signin from context
   const { googleSignIn } = UserAuth();
 
   let navigate = useNavigate();
 
+  // calling function for signing in
   const signIn = async () => {
     try {
       await googleSignIn();
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

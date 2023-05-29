@@ -14,12 +14,13 @@ import {
 } from "react-share";
 
 function Dashboard() {
-  const [symbol, setSymbol] = useState("");
-  const [fdata, setFdata] = useState(null);
-  const navigate = useNavigate()
-  const { googleLogout, user} = UserAuth()
+  const [symbol, setSymbol] = useState(""); //to get the input
+  const [fdata, setFdata] = useState(null); //setting the fetched data
+  const navigate = useNavigate();
+  const { googleLogout, user} = UserAuth();
 
-  const apikey = process.env.REACT_APP_API_KEY;
+  const apikey = process.env.REACT_APP_API_KEY; //for alpha vantage
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(symbol);
@@ -95,6 +96,8 @@ function Dashboard() {
           The closing price of the day: <span style={{color:"dodgerblue"}}>{(fdata["Time Series (Daily)"]["2023-05-15"]['4. close'])}</span>
           </h6>
         </div>
+        
+        {/* using react-share */}
         <WhatsappShareButton
             url="stockprice-usha.netlify.app"
             title={`The stock closing price of ${symbol} on 15th May is ${(fdata["Time Series (Daily)"]["2023-05-15"]['4. close'])}`}
