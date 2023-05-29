@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+}.dashboard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.topbar{
+    width: 100vw;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.topbar > h4{
+    padding: 6px;
+}
+.dashboard-r{
+    color: gray;
+}
+.dashboard-r > h5,h6{
+    margin: 2px;
+}
