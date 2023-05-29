@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "./Context/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
+import {v4 as uuid} from 'uuid';
 
 function Login() {
   // getting signin from context
@@ -14,6 +15,8 @@ function Login() {
   const signIn = async () => {
     try {
       await googleSignIn();
+      const unique_id = uuid();
+      localStorage.setItem("Authorization",unique_id);
       navigate("/");
     } catch (error) {
       console.log(error);

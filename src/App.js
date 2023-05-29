@@ -7,7 +7,6 @@ import {Routes,Route} from 'react-router-dom';
 function App() {
   // getting token fron local storage one logged in
   const token = localStorage.getItem("Authorization") 
-
   return (
     <>
     {/* for google authentication and to get user info */}
@@ -15,7 +14,7 @@ function App() {
         {/* creating routes from react router dom */}
         <Routes>
           {/* conditional rendering to navigate to dashboard page if token is present or else stay in login page */}
-          {token ? (
+          {cookies ? (
             <Route path="/dashboard" element={<Dashboard />} />
           ) : (
             <Route path="/" element={<Login />} />

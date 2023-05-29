@@ -12,6 +12,7 @@ import {
   EmailIcon,
   WhatsappIcon
 } from "react-share";
+import {useCookies} from 'react-cookie';
 
 function Dashboard() {
   const [symbol, setSymbol] = useState(""); //to get the input
@@ -35,6 +36,7 @@ function Dashboard() {
 
   const logout = (e) =>{
     googleLogout()
+    localStorage.clear()
     navigate('/')
   }
 
@@ -96,7 +98,7 @@ function Dashboard() {
           The closing price of the day: <span style={{color:"dodgerblue"}}>{(fdata["Time Series (Daily)"]["2023-05-15"]['4. close'])}</span>
           </h6>
         </div>
-        
+
         {/* using react-share */}
         <WhatsappShareButton
             url="stockprice-usha.netlify.app"
