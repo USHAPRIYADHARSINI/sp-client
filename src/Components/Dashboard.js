@@ -96,14 +96,14 @@ function Dashboard() {
           </h6>
         </div>
         <WhatsappShareButton
-            url="https://localhost:3000"
+            url="stockprice-usha.netlify.app"
             title={`The stock closing price of ${symbol} on 15th May is ${(fdata["Time Series (Daily)"]["2023-05-15"]['4. close'])}`}
             logofillcolor="white"
           >
             <WhatsappIcon size={32} round />
           </WhatsappShareButton>
           <EmailShareButton
-            url="https://localhost:3000"
+            url="stockprice-usha.netlify.app"
             subject="The stock price"
             body={`The stock price of ${symbol} on 15th May is ${(fdata["Time Series (Daily)"]["2023-05-15"]['4. close'])}`}
             className="Demo__some-network__share-button"
